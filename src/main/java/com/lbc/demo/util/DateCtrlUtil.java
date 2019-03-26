@@ -1,10 +1,11 @@
-package com.lbc.demo.Sharding.constants;
+package com.lbc.demo.util;
 
 
 import org.apache.commons.lang3.time.FastDateFormat;
 
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
@@ -32,7 +33,7 @@ public class DateCtrlUtil {
     }
 
     public static Long stringToLong(String string) throws ParseException {
-        return localDate2Date(LocalDate.parse(string, dateFormat)).getTime();
+        return localDateTime2Date(LocalDateTime.parse(string, dateFormat)).getTime();
     }
 
     public static String longToString(Long dateLong) {
@@ -50,6 +51,10 @@ public class DateCtrlUtil {
 
     public static Date localDate2Date(LocalDate localDate) {
         return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    }
+
+    public static Date localDateTime2Date(LocalDateTime localDateTime) {
+        return Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
     }
 
     public static String getYear(Date date) {

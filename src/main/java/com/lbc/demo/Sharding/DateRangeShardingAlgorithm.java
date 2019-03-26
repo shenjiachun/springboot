@@ -2,7 +2,7 @@ package com.lbc.demo.Sharding;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Range;
-import com.lenovo.corgi.utils.DateCtrlUtil;
+import com.lbc.demo.util.DateCtrlUtil;
 import io.shardingsphere.api.algorithm.sharding.RangeShardingValue;
 import io.shardingsphere.api.algorithm.sharding.standard.RangeShardingAlgorithm;
 import org.slf4j.Logger;

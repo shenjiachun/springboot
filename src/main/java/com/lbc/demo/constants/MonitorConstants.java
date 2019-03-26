@@ -1,4 +1,4 @@
-package com.lbc.demo.Sharding.constants;
+package com.lbc.demo.constants;
 
 public class MonitorConstants {
     public static final String GPU_LABLE_V100 = "V100-32480M";

@@ -2,7 +2,7 @@ package com.lbc.demo.Sharding;
 
 
 import com.google.common.collect.Maps;
-import com.lbc.demo.Sharding.constants.MonitorConstants;
+import com.lbc.demo.constants.MonitorConstants;
 import io.shardingsphere.api.config.ShardingRuleConfiguration;
 import io.shardingsphere.api.config.TableRuleConfiguration;
 import io.shardingsphere.api.config.strategy.StandardShardingStrategyConfiguration;
@@ -28,7 +28,6 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * Created by tuyu on 1/11/17.
  */
 @Configuration
 @MapperScan(basePackages = "com.lenovo.corgi.dao.mapper", sqlSessionTemplateRef = "sqlSessionTemplate")
@@ -95,7 +94,7 @@ public class ShardingJDBC {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(shardingDataSource());
-        sqlSessionFactoryBean.setTypeAliasesPackage("com.lenovo.corgi.entity");
+        sqlSessionFactoryBean.setTypeAliasesPackage("com.lbc.demo.entity");
 
         ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
 
